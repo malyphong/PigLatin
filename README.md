@@ -11,10 +11,15 @@ Example Input: 3
 Example Output: 3
 The program adds "ay" to single-letter words beginning with a vowel.
 Example Input: i
-Example Output: iay
+Example Output:
+
+
+
 The program adds "way" to the end of a word that starts with a vowel.
 Example Input: and
 Example Output: andway
+
+
 If the words starts with a single consonant the program moves that consonant to the end of the word and then adds "ay".
 Example Input: lay
 Example Output: aylay
