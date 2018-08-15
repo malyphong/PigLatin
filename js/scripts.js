@@ -8,12 +8,18 @@ var vowels = ['a', 'e', 'i', 'o', 'u'];
 
 
 
-
 // user interface
 $(document).ready(function() {
  $('#input-form').submit(function(event) {
    event.preventDefault();
    var inputSentence = $("#inputSentence").val();
-console.log(inputSentence);
+   var slicedArray = inputSentence.split(" ");
+
+   var notAphabet = !consanants && !vowels;
+
+   console.log(notAphabet);
+
+
+
  });
 });
