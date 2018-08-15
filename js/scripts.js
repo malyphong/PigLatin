@@ -8,7 +8,6 @@ var way = "way";
 
 
 
-
 // user interface
 $(document).ready(function() {
  $('#input-form').submit(function(event) {
@@ -16,13 +15,8 @@ $(document).ready(function() {
    var inputSentence = $("#inputSentence").val();
 
 
-
-  // if (inputSentence.length === 1) {
-  //   // $('#translated').text(inputSentence + ay);
-  //   alert(inputSentence + "ay");
-  // }
   for (var i = 0; i < 1; i++) {
-    for (var j = 0; j <vowels.length; j++)
+    for (var j = 0; j < vowels.length; j++)
     if (inputSentence.length === 1 && inputSentence === vowels[j]) {
       alert(inputSentence + ay);
     }
@@ -30,12 +24,17 @@ $(document).ready(function() {
       alert(inputSentence + way);
 }
 
-  // for (var i = 0; i <inputSentence.length; i++) {
-  //   for (var j = 0; j <vowels.length; j++)
-  //   if (j === charAt(0) && vowels[j]) {
-  //     alert(inputSentence + way);
-  //   }
-  // }
+  for (var i = 0; i < 1; i++) {
+    for (var k = 0; k < consanants.length; k++)
+    if (inputSentence.charAt(0) === consanants[k]) {
+      var shift = inputSentence.charAt(0);
+      var removed = inputSentence.slice(1);
+      alert(removed + shift + ay);
+    } else if (inputSentence.charAt(0) && inputSentence.charAt(1) === consanants[k]) {
+      
+    }
+  }
+
   });
 });
 
