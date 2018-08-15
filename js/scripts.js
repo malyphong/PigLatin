@@ -12,18 +12,20 @@ var way = "way";
 $(document).ready(function() {
  $('#input-form').submit(function(event) {
    event.preventDefault();
-   var firstLetter = inputSentence.charAt(0);
-   var secondLetter = inputSentence.charAt(1);
+
    var inputSentence = $("#inputSentence").val();
-    for (var h = 0; h < inputSentence.length; 1++) {
+    for (var h = 0; h < inputSentence.length; h++) {
       if (vowels.includes(inputSentence.charAt(h))) {
         var firstVowel = h;
+        var endOfword = inputSentence.slice(firstVowel, inputSentence.length);
+        var begOfword = inputSentence.slice(0, firstVowel);
+
         break;
+
       }
     }
-
-    var endOfword = inputSentence.slice(firstVowel, inputSentence.length);
-    var begOfword = inputSentence.slice(0, firstVowel);
+    var firstLetter = inputSentence.charAt(0);
+    var secondLetter = inputSentence.charAt(1);
 
   for (var i = 0; i < 1; i++) {
     for (var j = 0; j < vowels.length; j++)
@@ -34,29 +36,21 @@ $(document).ready(function() {
       alert(inputSentence + way);
     }
     }
-  for (var m = 0; m < 1; m++) {
+  for (var m = 0; m < inputSentence.length; m++) {
     for (var k = 0; k < consanants.length; k++)
     if (inputSentence.charAt(0) === consanants[k]) {
       var shift1 = inputSentence.charAt(0);
       var removed1 = inputSentence.slice(1);
       alert(removed1 + shift1 + ay);
-    else if (consanants.includes(firstLetter)) {
+    } else if (consanants.includes(firstLetter)) {
       var wholeFinalWord = endOfword + begOfword + ay;
-      return combinedWord;
-      else {
-        return inputSentence;
+      return wholeFinalWord;
+    } else {
+      return inputSentence;
       }
     }
-    }
-
-      // var shift2 = (inputSentence.charAt(0) + inputSentence.charAt(1));
-      // var removed2 = inputSentence.slice(2);
-      // alert(removed2 + shift2 + ay);
-
-
 
   });
-
 });
 
 
