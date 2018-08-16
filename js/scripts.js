@@ -4,51 +4,51 @@ var vowels = ["a", "e", "i", "o", "u"];
 var ay = "ay";
 var way = "way";
 
+var translatedSentence = function(inputSentence) {
 
+ //
+ //  for (var h = 0; h < inputSentence.length; h++) {
+ //   if (vowels.includes(inputSentence.charAt(h))) {
+ //     var firstVowel = h;
+ //     break;
+ // }
+// }
+  var firstLetter = inputSentence.charAt(0);
+  var secondLetter = inputSentence.charAt(1);
 
+  var endOfword = inputSentence.slice(firstVowel, inputSentence.length);
+  var begOfword = inputSentence.slice(0, firstVowel);
 
+    for (var i = 0; i < 1; i++) {
+      for (var j = 0; j < vowels.length; j++) {
+
+      var firstVowel = vowels[j];
+
+      if (inputSentence.charAt(0) === vowels[j]) {
+        console.log(inputSentence + way);
+      }
+      else if ((inputSentence.length > 1) && (firstVowel === 0)) {
+       var wholeFinalWord = inputSentence.concat(way);
+        console.log(wholeFinalWord);
+      }
+      else if (consanants.includes(firstLetter)) {
+        wholeFinalWord = endOfword + begOfword + ay;
+       console.log(endOfword);
+      }
+      else {
+       // alert(inputSentence);
+     }
+   }
+ }
+}
 
 // user interface
 $(document).ready(function() {
  $('#input-form').submit(function(event) {
    event.preventDefault();
-
-   var inputSentence = $("#inputSentence").val();
-    for (var h = 0; h < inputSentence.length; h++) {
-      if (vowels.includes(inputSentence.charAt(h))) {
-        var firstVowel = h;
-        var endOfword = inputSentence.slice(firstVowel, inputSentence.length);
-        var begOfword = inputSentence.slice(0, firstVowel);
-
-        break;
-
-      }
-    }
-    var firstLetter = inputSentence.charAt(0);
-    var secondLetter = inputSentence.charAt(1);
-
-  for (var i = 0; i < 1; i++) {
-    for (var j = 0; j < vowels.length; j++)
-    if (inputSentence.length === 1 && inputSentence === vowels[j]) {
-      alert(inputSentence + ay);
-    }
-    else if (inputSentence.charAt(0) === vowels[j]) {
-      alert(inputSentence + way);
-    }
-    }
-  for (var m = 0; m < inputSentence.length; m++) {
-    for (var k = 0; k < consanants.length; k++)
-    if (inputSentence.charAt(0) === consanants[k]) {
-      var shift1 = inputSentence.charAt(0);
-      var removed1 = inputSentence.slice(1);
-      alert(removed1 + shift1 + ay);
-    } else if (consanants.includes(firstLetter)) {
-      var wholeFinalWord = endOfword + begOfword + ay;
-      return wholeFinalWord;
-    } else {
-      return inputSentence;
-      }
-    }
+    var inputSentence = $("#inputSentence").val();
+    var result = translatedSentence(inputSentence);
+    $('.translated').text(result);
 
   });
 });
