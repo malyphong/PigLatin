@@ -1,46 +1,40 @@
 // business logic
-var consanants = ['qu', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z', ];
+var consanants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z'];
 var vowels = ["a", "e", "i", "o", "u"];
 var ay = "ay";
 var way = "way";
 
 var translatedSentence = function(inputSentence) {
-
- //
- //  for (var h = 0; h < inputSentence.length; h++) {
- //   if (vowels.includes(inputSentence.charAt(h))) {
- //     var firstVowel = h;
- //     break;
- // }
-// }
   var firstLetter = inputSentence.charAt(0);
   var secondLetter = inputSentence.charAt(1);
+  for (var i = 0; i < inputSentence.length; i +=1) {
+    if (vowels.includes(inputSentence.charAt(i))) {
+      var firstVowel = (inputSentence.charAt(i));
+      break;
 
-  var endOfword = inputSentence.slice(firstVowel, inputSentence.length);
-  var begOfword = inputSentence.slice(0, firstVowel);
+    }
+  }
+  var endOfword = inputSentence.slice(i, inputSentence.length);
+  var begOfword = inputSentence.slice(0, i);
 
-    for (var i = 0; i < 1; i++) {
-      for (var j = 0; j < vowels.length; j++) {
 
-      var firstVowel = vowels[j];
 
-      if (inputSentence.charAt(0) === vowels[j]) {
-        console.log(inputSentence + way);
-      }
-      else if ((inputSentence.length > 1) && (firstVowel === 0)) {
-       var wholeFinalWord = inputSentence.concat(way);
-        console.log(wholeFinalWord);
-      }
-      else if (consanants.includes(firstLetter)) {
-        wholeFinalWord = endOfword + begOfword + ay;
-       console.log(endOfword);
-      }
-      else {
-       // alert(inputSentence);
+  if (inputSentence.charAt(0) === vowels[i]) {
+    // console.log(inputSentence + way);
+  }
+  else if ((inputSentence.length > 1) && (firstVowel === 0)) {
+    var wholeFinalWord = inputSentence.concat(way);
+    // console.log(firstVowel);
+  }
+  else if (consanants.includes(firstLetter)) {
+    var wholeFinalWord = endOfword + begOfword + ay;
+    console.log(wholeFinalWord);
+  }
+  else {
+   // alert(inputSentence);
      }
    }
- }
-}
+
 
 // user interface
 $(document).ready(function() {
