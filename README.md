@@ -21,15 +21,14 @@ Example Output: aylay
 If the words starts with a two consonants the program moves those to the end of the word and then adds "ay".
 Example Input: share
 Example Output: areshay
-
-
-
 If the words starts with a three consonants the program moves them to the end of the word and then adds "ay".
 Example Input: school
 Example Output: oolschay
 If the words contains a y it will be treated as a consonant and follow all other rules that apply to consonants.
 Example Input: yeehaw
 Example Output: eehawyay
+
+
 Anytime that the letters q and u appear next to each other they will be considered a single consonant and follow all other consonant rules.
 Example Input: quick
 Example Output: ickquay

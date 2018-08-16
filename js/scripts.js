@@ -1,5 +1,5 @@
 // business logic
-var consanants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z'];
+var consanants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'y', 'z', 'qu'];
 var vowels = ["a", "e", "i", "o", "u"];
 var ay = "ay";
 var way = "way";
@@ -16,6 +16,8 @@ var translatedSentence = function(inputSentence) {
   }
   var endOfword = inputSentence.slice(i, inputSentence.length);
   var begOfword = inputSentence.slice(0, i);
+  var quEndOfword = inputSentence.slice(2, inputSentence.length);
+  var quBegOfword = inputSentence.slice(0, 2);
 
 
 
@@ -26,9 +28,13 @@ var translatedSentence = function(inputSentence) {
     var wholeFinalWord = inputSentence.concat(way);
     // console.log(firstVowel);
   }
+  else if (inputSentence.charAt(0) === "q" && inputSentence.charAt(1) === "u") {
+    var wholeFinalWord = quEndOfword + quBegOfword + ay;
+    console.log(wholeFinalWord);
+  }
   else if (consanants.includes(firstLetter)) {
     var wholeFinalWord = endOfword + begOfword + ay;
-    console.log(wholeFinalWord);
+    // console.log(wholeFinalWord);
   }
   else {
    // alert(inputSentence);
