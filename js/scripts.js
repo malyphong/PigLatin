@@ -3,43 +3,47 @@ var consanants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q
 var vowels = ["a", "e", "i", "o", "u"];
 var ay = "ay";
 var way = "way";
+var firstWord;
+var pigLating = [];
 
-var translatedSentence = function(inputSentence) {
-  var firstLetter = inputSentence.charAt(0);
-  var secondLetter = inputSentence.charAt(1);
-  for (var i = 0; i < inputSentence.length; i +=1) {
-    if (vowels.includes(inputSentence.charAt(i))) {
-      var firstVowel = (inputSentence.charAt(i));
+var translatedSentence = function(inputString) {
+  console.log(inputString);
+  var firstLetter = inputString.charAt(0);
+  var secondLetter = inputString.charAt(1);
+
+
+  for (var i = 0; i < inputString.length; i +=1) {
+    if (vowels.includes(inputString.charAt(i))) {
+      var firstVowel = (inputString.charAt(i));
       break;
 
     }
   }
-  var endOfword = inputSentence.slice(i, inputSentence.length);
-  var begOfword = inputSentence.slice(0, i);
-  var quEndOfword = inputSentence.slice(2, inputSentence.length);
-  var quBegOfword = inputSentence.slice(0, 2);
+  var endOfword = inputString.slice(i, inputString.length);
+  var begOfword = inputString.slice(0, i);
+  var quEndOfword = inputString.slice(2, inputString.length);
+  var quBegOfword = inputString.slice(0, 2);
 
 
 
-  if (inputSentence.charAt(0) === vowels[i]) {
-    // console.log(inputSentence + way);
-  }
-  else if ((inputSentence.length > 1) && (firstVowel === 0)) {
-    var wholeFinalWord = inputSentence.concat(way);
+  if (inputString.charAt(0) === vowels[i]) {
+    // console.log(inputString + way);
+  } else if ((inputString.length > 1) && (firstVowel === 0)) {
+    var wholeFinalWord = inputString.concat(way);
     // console.log(firstVowel);
-  }
-  else if (inputSentence.charAt(0) === "q" && inputSentence.charAt(1) === "u") {
+  } else if (inputString.charAt(0) === "q" && inputString.charAt(1) === "u") {
     var wholeFinalWord = quEndOfword + quBegOfword + ay;
-    console.log(wholeFinalWord);
-  }
-  else if (consanants.includes(firstLetter)) {
+    // console.log(wholeFinalWord);
+  } else if (consanants.includes(firstLetter)) {
     var wholeFinalWord = endOfword + begOfword + ay;
     // console.log(wholeFinalWord);
+  } else {
+   // alert(inputString);
   }
-  else {
-   // alert(inputSentence);
-     }
-   }
+
+  return wholeFinalWord;
+}
+
 
 
 // user interface
@@ -47,8 +51,20 @@ $(document).ready(function() {
  $('#input-form').submit(function(event) {
    event.preventDefault();
     var inputSentence = $("#inputSentence").val();
-    var result = translatedSentence(inputSentence);
-    $('.translated').text(result);
+    inputSentence = inputSentence.split(" ");
+    // console.log(inputSentence);
+
+    inputSentence.forEach(function(inputString) {
+      console.log(inputString);
+      // var inputString = [];
+      var result = translatedSentence(inputString);
+      console.log(result);
+    })
+
+
+    // var result = translatedSentence(inputSentence);
+
+    // $('.translated').text(result);
 
   });
 });

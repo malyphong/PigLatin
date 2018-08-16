@@ -28,7 +28,6 @@ If the words contains a y it will be treated as a consonant and follow all other
 Example Input: yeehaw
 Example Output: eehawyay
 
-
 Anytime that the letters q and u appear next to each other they will be considered a single consonant and follow all other consonant rules.
 Example Input: quick
 Example Output: ickquay
